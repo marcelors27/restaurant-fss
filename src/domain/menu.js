@@ -17,7 +17,9 @@ const getItensBalcao = async() => {
     
     let data= [];
     itensBalcao.forEach(element => {
-        data.push(await _dataRepository.getItensByType(element));
+        let dataByType = _dataRepository.getItensByType(element);
+
+        data.push(dataByType);
     });
     return data;
 }
