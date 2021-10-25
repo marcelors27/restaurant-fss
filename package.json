@@ -1,0 +1,17 @@
+{
+  "name": "restaurant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcelo Schmitz",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^2.6.9",
+    "express": "^4.17.1",
+    "http": "^0.0.1-security"
+  }
+}
