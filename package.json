@@ -12,6 +12,7 @@
   "dependencies": {
     "debug": "^2.6.9",
     "express": "^4.17.1",
-    "http": "^0.0.1-security"
+    "http": "^0.0.1-security",
+    "mongoose": "^6.0.12"
   }
 }

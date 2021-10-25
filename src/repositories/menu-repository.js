@@ -1,22 +1,12 @@
 'use strict'
 
-
+const moongose = require('mongoose');
+const Menu = moongose.model('Menu');
 
 const getItensFromMenu = async() => {
-    return {
-        cardapio: [
-            {
-                produto: "sanduiche",
-                valor: 10
-            },
-            {
-                produto: "bolo",
-                valor: 5
-            },
-        ]
-    }
+    return await Menu.find({
+        active: true
+    });
 }
-
-
 
 exports.getItensFromMenu = getItensFromMenu;
