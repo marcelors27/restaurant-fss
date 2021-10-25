@@ -16,6 +16,10 @@ const schema = new Schema({
         type: Boolean,
         required: true,
         default: true
+    },
+    type: {
+        type: String,
+        required: true
     }
 });
 
