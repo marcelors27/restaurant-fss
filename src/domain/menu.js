@@ -1,6 +1,9 @@
 'use strict';
 
+const _cardapioBuilder = require('./cardapio-builder')
+
 let _dataRepository = null;
+//@readonly()//Decorador: indicando que os itens são apenas para leitura (Javascript não permite nessa versão ainda)
 const itensBalcao = [ 'doce', 'salgado']; //Aberto-Fechado (O): Se quiser mais itens no balcão, apenas mexer aqui
 
 
@@ -10,6 +13,12 @@ const setDataRepository = async(dataRepository) => { //Inversão de Dependência
 
 
 const getItensFromMenu = async() => {
+
+    const cardapio = await _cardapioBuilder.adicionaSessao(_dataRepository.getItensByType('salgado')) //Construtor: Construindo o cardápio
+                                            .adicionaItensPromocionais(_dataRepository.getItensByType('salgado'))
+                                            .adicionaSobremesasDoDia(_dataRepository.getItensByType('doce'))
+                                            .getCardapio();
+
     return _dataRepository.getItensFromMenu();
 }
 
