@@ -24,5 +24,10 @@ const getItensByType = async(foodType) => {
     ]
 }
 
+const create = async(data) => {
+    //não faz nada
+}
+
 exports.getItensFromMenu = getItensFromMenu;
 exports.getItensByType = getItensByType;
+exports.create = create;

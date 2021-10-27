@@ -17,5 +17,11 @@ const getItensByType = async(foodType) => {
     }, 'description price type');
 }
 
+const create = async(data) => {
+    const menu = new Menu(data);
+    await menu.save();
+}
+
 exports.getItensFromMenu = getItensFromMenu;
 exports.getItensByType = getItensByType;
+exports.create = create;

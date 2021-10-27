@@ -35,3 +35,21 @@ exports.getTypeBalcao = async(req, res, next) => {
         });
     }
 }
+
+
+exports.create = async(req, res, next) => {
+    try{    
+
+        var data = await _menu.setCommand({//Command: manda o objeto junto com a ação, permitindo futuramente empilhar ou tratar em paralelo
+            action: "adicionar",
+            data: req.body
+        });
+        
+        res.status(200).send(data);
+    } catch (e) {
+        res.status(500).send({
+            message: 'Falha',
+            error: e
+        });
+    }
+}

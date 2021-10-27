@@ -33,6 +33,15 @@ const getItensBalcao = async() => {
     return data;
 }
 
+const setCommand = async(command) => {
+
+    if(command.action == "adicionar")
+    {
+        _dataRepository.create(command.data);
+    }
+}
+
 exports.setDataRepository = setDataRepository;
 exports.getItensFromMenu = getItensFromMenu;
 exports.getItensBalcao = getItensBalcao;
+exports.setCommand = setCommand;
